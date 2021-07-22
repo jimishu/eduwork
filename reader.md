@@ -25,6 +25,13 @@ console.log($);
 ## ES6语法兼容问题
 ![es6兼容](/images/2.png)
 ## webpack使用
+ 官网[webpack官网](https://webpack.docschina.org/)
++ 树结构：在一个入口文件中引入所有资源，形成所有依赖关系树状图
++ 模块：所有的资源或一个文件都可称为模块
++ chunk: 打包被操作的模块文件叫chunk
++ bundel: bundel是最后打包后的文件，大多数是chunk的合体
++ 开发环境： webpack --mode development
++ 生成环境： webpack --mode production
 
 
 
