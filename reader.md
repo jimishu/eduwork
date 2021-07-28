@@ -33,6 +33,14 @@ console.log($);
 + 开发环境： webpack --mode development
 + 生成环境： webpack --mode production
 
+  webpack打包html资源
++ 插件打包、重命名、压缩
+步骤：
++ npm i html-webpack-plugin
+ ```
+ const htmlWebpackPlugin = require('html-webpack-plugin');
+ ```
+
 
 
 

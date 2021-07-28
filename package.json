@@ -9,6 +9,7 @@
   "author": "jimishu",
   "license": "ISC",
   "dependencies": {
+    "html-webpack-plugin": "^5.3.2",
     "jquery": "^3.6.0"
   }
 }
