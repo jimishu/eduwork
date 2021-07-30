@@ -33,7 +33,7 @@ console.log($);
 + 开发环境： webpack --mode development
 + 生成环境： webpack --mode production
 
-  webpack打包html资源
+##### webpack打包html资源
 + 插件打包、重命名、压缩
 步骤：
 + npm i html-webpack-plugin
@@ -41,6 +41,14 @@ console.log($);
  const htmlWebpackPlugin = require('html-webpack-plugin');
  ```
 
+##### webpack打包less或sass资源
++ 因为css只是单纯的属性描述，它并不具有变量、条件语句等，css的特性导致了它难组织和维护
++ Sass和Less都属于CSS预处理器，定义了一种新的语言，其基本思想使用一种专门的编程语言，为CSS增加一些编程的特性，将CSS作为目标生成文件，然后开发者使用这种语言进行CSS编码工作
++ Less需要less包和less-loader
++ Sass需要node-sass包和sass-loader。备注：sass文件以.scss结尾
++ 提取CSS作为单独文件：
+  ![提取CSS为单独文件](/images/3.png)
++ CSS浏览器兼容
 
 
 

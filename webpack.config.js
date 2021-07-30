@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackEncodingPlugin = require('webpack-encoding-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   /* 1、入口文件，默认src/index.js以这个文件开始 */
   // 单入口，如果只有一个入口，使用字符串，指定一个入口文件，打包一个chunk,输出bundle
@@ -33,10 +34,9 @@ module.exports = {
   // 3、loader 让webpack能够去处理那些非Javascript资源css,img等，将他们处理成webpack能够识别的资源，可以理解成一个翻译过程
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'] //遵循从右往左
-      }
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }, //遵循从右往左
+      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'] },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
     ]
   },
   // 4、plugins插件
@@ -70,6 +70,9 @@ module.exports = {
     // }),
     new WebpackEncodingPlugin({
       encoding: 'UTF-8'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'demo.css'
     })
   ],
   // 5、mode模式，development 开发模式, production 生产模式
